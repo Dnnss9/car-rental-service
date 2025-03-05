@@ -15,9 +15,10 @@ jobs:
       - name: Build and test
         run: |
           export SHELL=/bin/bash
+          chmod 777 ./gradlew
           ./gradlew build
       - name: Docker images
-        working-directory: rent
+        working-directory: .
         run: |
           export SHELL=/bin/bash
           docker build -t rent .
